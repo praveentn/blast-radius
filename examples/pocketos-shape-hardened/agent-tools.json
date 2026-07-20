@@ -1,0 +1,26 @@
+{
+  "_comment": "The same agent after three changes. Nothing was rewritten, no model was swapped, no framework was adopted. The shell tool is gone, the one remaining state change is gated, and the credentials moved off disk into a per-call scoped issuer.",
+  "mcpServers": {
+    "deploy": {
+      "tools": [
+        { "name": "get_service_status", "description": "Read current status of a service." },
+        { "name": "list_deployments", "description": "List recent deployments for a service." },
+        { "name": "read_logs", "description": "Fetch the last N lines of a service log." },
+        { "name": "redeploy_service", "description": "Trigger a redeploy of an existing service. Requires explicit human approval before it lands." },
+        { "name": "set_env_var", "description": "Update an environment variable on a service. Requires explicit human approval. Previous value is versioned and restorable." }
+      ]
+    },
+    "repo": {
+      "tools": [
+        { "name": "read_file", "description": "Read a file from the working tree." },
+        { "name": "search_files", "description": "Search the working tree for a pattern." },
+        { "name": "write_file", "description": "Write a file in the working tree. Versioned, every write is restorable from git." }
+      ]
+    },
+    "notify": {
+      "tools": [
+        { "name": "send_slack_message", "description": "Post a message to the team channel. Requires human approval outside the team channel." }
+      ]
+    }
+  }
+}

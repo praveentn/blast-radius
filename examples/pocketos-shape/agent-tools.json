@@ -1,0 +1,27 @@
+{
+  "_comment": "A deploy-helper agent's tool manifest. This is the surface a normal review looks at. Every tool here reads as reasonable. Note there is no delete tool anywhere in this file.",
+  "mcpServers": {
+    "deploy": {
+      "tools": [
+        { "name": "get_service_status", "description": "Read current status of a service." },
+        { "name": "list_deployments", "description": "List recent deployments for a service." },
+        { "name": "read_logs", "description": "Fetch the last N lines of a service log." },
+        { "name": "redeploy_service", "description": "Trigger a redeploy of an existing service." },
+        { "name": "set_env_var", "description": "Update an environment variable on a service." },
+        { "name": "run_shell", "description": "Run a shell command in the project workspace." }
+      ]
+    },
+    "repo": {
+      "tools": [
+        { "name": "read_file", "description": "Read a file from the working tree." },
+        { "name": "search_files", "description": "Search the working tree for a pattern." },
+        { "name": "write_file", "description": "Write a file in the working tree." }
+      ]
+    },
+    "notify": {
+      "tools": [
+        { "name": "send_slack_message", "description": "Post a message to the team channel." }
+      ]
+    }
+  }
+}
